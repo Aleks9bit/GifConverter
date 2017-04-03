@@ -1,0 +1,190 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.bargin.alexey.converter.MainActivity">
+
+    <Button
+        android:id="@+id/open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Select video" />
+
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Record video" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRecord"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:id="@+id/fpsAndLogoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/info"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:id="@+id/selectFpsContainer"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:background="?attr/colorButtonNormal">
+
+            <TextView
+                android:id="@+id/selectFps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="FPS"
+                android:textSize="@dimen/textSize" />
+
+            <Spinner
+                android:id="@+id/chooseFps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/selectFps"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/printLogoContainer"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="?attr/colorButtonNormal">
+
+            <TextView
+                android:id="@+id/textPrintLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Print LOGO"
+                android:textSize="@dimen/textSize" />
+
+            <CheckBox
+                android:id="@+id/printLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/textPrintLogo" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/selectContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fpsAndLogoContainer"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:id="@+id/selectPositionContainer"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="?attr/colorButtonNormal">
+
+            <TextView
+                android:id="@+id/selectPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Position"
+                android:textSize="@dimen/textSize" />
+
+            <Spinner
+                android:id="@+id/choosePosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/selectPosition"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/selectColorContainer"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="?attr/colorButtonNormal">
+
+            <TextView
+                android:id="@+id/selectColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Color"
+                android:textSize="@dimen/textSize" />
+
+            <Spinner
+                android:id="@+id/chooseColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/selectColor"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/maxdur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectContainer"
+        android:textSize="@dimen/textSize" />
+
+    <TextView
+        android:id="@+id/curdur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/maxdur"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/textSize" />
+
+    <SeekBar
+        android:id="@+id/timeframe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/curdur"
+        android:max="100"
+        android:progress="0" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:text="Create GIF" />
+
+    <VideoView
+        android:id="@+id/capturedimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/save"
+        android:layout_below="@id/timeframe"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/openGifInBrowser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:text="Open .GIF" />
+</RelativeLayout>

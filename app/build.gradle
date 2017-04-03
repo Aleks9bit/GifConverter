@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.parvadov.denys.converter"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.customlogo.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.4'
+    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-armeabi-v7a:1.0.14'
+    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-x86:1.0.14'
+    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-mips:1.0.14'
+    compile 'com.github.wseemann:FFmpegMediaMetadataRetriever-arm64-v8a:1.0.14'
+
+
+
+    testCompile 'junit:junit:4.12'
+}
